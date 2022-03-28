@@ -6,19 +6,17 @@ using namespace std;
 bool check(string word) {
 	int alphabet[26] = { 0 };
 	int s = word.length();
-	bool ans = true;
-	alphabet[word[0] - 'A'] = 1;
+	alphabet[word[0] - 'a'] = 1;
 	for (int i = 1; i < s; i++) {
 		if (word[i] == word[i - 1]) {
 			continue;
 		}
-		if (alphabet[word[i] - 'A'] == 1) {
-			ans = false;
-			break;
+		if (alphabet[word[i] - 'a'] == 1) {
+			return false;
 		}
-		alphabet[word[i] - 'A'] = 1;
+		alphabet[word[i] - 'a'] = 1;
 	}
-	return ans;
+	return true;
 }
 
 int main() {
