@@ -21,12 +21,12 @@ int main() {
 			return 0;
 		}
 	}
-	int alphabet[26] = { 0 };
+	bool alphabet[26] = { false };
 	for (int i = 0; i < n; i++) {
-		alphabet[v[i] - 'A']++;
+		alphabet[v[i] - 'A']=true;
 	}
 	for (int i = 0; i < 26; i++) {
-		if (alphabet[i] > 1) {
+		if (!alphabet) {
 			cout << '!';
 			return 0;
 		}
